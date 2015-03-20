@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SpinnersSample</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="types">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Other</item>
+    </string-array>
+</resources>
