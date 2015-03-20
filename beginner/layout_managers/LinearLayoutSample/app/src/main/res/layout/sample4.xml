@@ -6,23 +6,29 @@
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    tools:context=".LinearActivity">
+    tools:context=".LinearActivity" >
 
-    <Button
+    <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Button 1" />
+        android:hint="To" />
 
-    <Button
+    <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Button 2" />
+        android:hint="Subject" />
 
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="Message" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:text="Button 3" />
+        android:text="Send" />
 
 </LinearLayout>
