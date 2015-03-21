@@ -4,17 +4,15 @@
     android:layout_height="fill_parent">
 
     <ImageView
-        android:id="@+id/ImageView01"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_launcher"></ImageView>
+        android:src="@drawable/ic_launcher" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Top Text"
-        android:textColor="#000"
         android:textSize="60sp" />
 
     <TextView
@@ -22,7 +20,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:text="Bottom Text"
-        android:textColor="#000"
-        android:textSize="50sp" />
+        android:textSize="70sp" />
 
 </FrameLayout>
