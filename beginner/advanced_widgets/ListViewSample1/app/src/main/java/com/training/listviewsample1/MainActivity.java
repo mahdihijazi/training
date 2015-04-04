@@ -23,12 +23,11 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(icicle);
         setContentView(R.layout.activity_main);
 
+        topTextView = (TextView) findViewById(R.id.topTextView);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, items));
         listView.setOnItemClickListener(onItemClickListener);
-
-        topTextView = (TextView) findViewById(R.id.topTextView);
 
     }
 
