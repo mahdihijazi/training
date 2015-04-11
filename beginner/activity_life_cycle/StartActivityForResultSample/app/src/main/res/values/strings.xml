@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">StartActivityForResultSample</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="pick_your_preferred_car">Pick your preferred car</string>
+    <string-array name="cars_array">
+        <item>BMW</item>
+        <item>Mercedes</item>
+        <item>Diablo</item>
+    </string-array>
+</resources>
