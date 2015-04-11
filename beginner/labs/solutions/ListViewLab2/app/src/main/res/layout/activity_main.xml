@@ -11,19 +11,26 @@
         android:weightSum="2"
         android:orientation="horizontal">
         <EditText
+            android:hint="Name"
             android:layout_weight="1"
             android:id="@+id/name"
+            android:singleLine="true"
             android:layout_width="0dp"
+            android:imeOptions="actionNext"
             android:layout_height="wrap_content" />
         <EditText
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:hint="Mobile"
             android:inputType="phone"
             android:layout_weight="1"
             android:id="@+id/mobile"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
-        </LinearLayout>
+    </LinearLayout>
 
     <Button
+        android:text="Add"
         android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

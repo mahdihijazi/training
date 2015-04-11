@@ -13,6 +13,7 @@ public class MainActivity extends ActionBarActivity {
 
     EditText name, mobile;
     Button add;
+    ContactsAdapter contactsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,10 @@ public class MainActivity extends ActionBarActivity {
         add = (Button) findViewById(R.id.add);
         ListView listView = (ListView) findViewById(R.id.list);
 
+        contactsAdapter = new ContactsAdapter(MainActivity.this);
+        listView.setAdapter(contactsAdapter);
         listView.setOnItemLongClickListener(onItemLongClickListener);
+
         add.setOnClickListener(clickListener);
 
     }
@@ -32,7 +36,9 @@ public class MainActivity extends ActionBarActivity {
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            // write your code here!
+            contactsAdapter.addContact(new Contact(name.getText().toString(), mobile.getText().toString()));
+            name.setText("");
+            mobile.setText("");
 
         }
     };
@@ -40,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
     AdapterView.OnItemLongClickListener onItemLongClickListener = new AdapterView.OnItemLongClickListener() {
         @Override
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-            // write your code here!
+            contactsAdapter.deleteContact(position);
 
             return true;
         }

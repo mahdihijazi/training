@@ -13,9 +13,9 @@ public class ContactsAdapter extends BaseAdapter {
     ArrayList<Contact> contacts;
     LayoutInflater layoutInflater;
 
-    public ContactsAdapter(Context context, ArrayList<Contact> contacts) {
+    public ContactsAdapter(Context context) {
         layoutInflater = LayoutInflater.from(context);
-        this.contacts = contacts;
+        this.contacts = new ArrayList<>();
 
     }
 
