@@ -37,27 +37,14 @@ public class ContactsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = null;
-        ViewHolder viewHolder = null;
+        View view = layoutInflater.inflate(R.layout.row, parent, false);
 
-        if (convertView == null) {
-            view = layoutInflater.inflate(R.layout.row, parent, false);
-
-            viewHolder = new ViewHolder();
-            viewHolder.picture = (ImageView) view.findViewById(R.id.picture);
-            viewHolder.name = (TextView) view.findViewById(R.id.name);
-
-            view.setTag(viewHolder);
-
-        } else {
-            view = convertView;
-            viewHolder = (ViewHolder) view.getTag();
-
-        }
+        ImageView picture = (ImageView) view.findViewById(R.id.picture);
+        TextView name = (TextView) view.findViewById(R.id.name);
 
         Contact contact = (Contact) getItem(position);
-        viewHolder.picture.setImageResource(contact.pictureId);
-        viewHolder.name.setText(contact.name);
+        picture.setImageResource(contact.pictureId);
+        name.setText(contact.name);
 
         return view;
 
