@@ -14,7 +14,7 @@ public class ContactsAdapter extends BaseAdapter {
     ArrayList<Contact> contacts;
     LayoutInflater layoutInflater;
 
-    public ContactsAdapter(Context context, ArrayList<Contact> contacts){
+    public ContactsAdapter(Context context, ArrayList<Contact> contacts) {
         layoutInflater = LayoutInflater.from(context);
         this.contacts = contacts;
 
@@ -40,7 +40,7 @@ public class ContactsAdapter extends BaseAdapter {
         View view = null;
         ViewHolder viewHolder = null;
 
-        if(convertView == null) {
+        if (convertView == null) {
             view = layoutInflater.inflate(R.layout.row, parent, false);
 
             viewHolder = new ViewHolder();
@@ -60,12 +60,6 @@ public class ContactsAdapter extends BaseAdapter {
         viewHolder.name.setText(contact.name);
 
         return view;
-
-    }
-
-    public void addContact(Contact contact) {
-        contacts.add(contact);
-        notifyDataSetChanged();
 
     }
 
