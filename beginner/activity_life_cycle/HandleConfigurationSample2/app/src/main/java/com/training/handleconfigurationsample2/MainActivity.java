@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
-    EditText editText;
+    EditText editText; // just make sure to have an id for this view to maintain it's state across orientation chages
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +29,4 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putParcelable("editText", editText.onSaveInstanceState());
-
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        editText.onRestoreInstanceState(savedInstanceState
-                .getParcelable("editText"));
-
-    }
 }
