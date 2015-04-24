@@ -1,0 +1,11 @@
+bin/
+gen/
+*.metadata
+*.settings
+/.gradle/
+/.idea/
+*.iml
+*.properties
+/mirror/
+/build/
+*.DS_Store
