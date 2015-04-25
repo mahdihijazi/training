@@ -34,15 +34,14 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("text", text.getText().toString());
+        outState.putCharSequence("text", text.getText());
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        text.setText(savedInstanceState.getString("text"));
+        text.setText(savedInstanceState.getCharSequence("text"));
 
     }
-
 
 }
