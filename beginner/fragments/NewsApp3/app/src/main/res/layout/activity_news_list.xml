@@ -1,4 +1,6 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/newsitem_list"
+    android:name="com.training.newsapp3.NewsListFragment"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context=".NewsListActivity" tools:ignore="MergeRootFrame" />
+    android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
+    tools:context=".NewsListActivity" tools:layout="@android:layout/list_content" />
