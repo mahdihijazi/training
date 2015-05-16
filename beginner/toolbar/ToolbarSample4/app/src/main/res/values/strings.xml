@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="dropdown">
+        <item>Section 1</item>
+        <item>Section 2</item>
+        <item>Section 3</item>
+    </string-array>
+
 </resources>
