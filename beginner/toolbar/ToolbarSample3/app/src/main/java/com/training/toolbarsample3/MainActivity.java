@@ -39,16 +39,16 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         // Restore the previously serialized current tab position.
-        if (savedInstanceState.containsKey(STATE_SELECTED_NAVIGATION_ITEM)) {
+        if (savedInstanceState.containsKey("tab")) {
             getSupportActionBar().setSelectedNavigationItem(
-                    savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM));
+                    savedInstanceState.getInt("tab"));
         }
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         // Serialize the current tab position.
-        outState.putInt(STATE_SELECTED_NAVIGATION_ITEM, getSupportActionBar()
+        outState.putInt("tab", getSupportActionBar()
                 .getSelectedNavigationIndex());
     }
 
