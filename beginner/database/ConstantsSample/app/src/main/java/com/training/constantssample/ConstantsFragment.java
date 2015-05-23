@@ -6,7 +6,6 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,8 +13,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -44,12 +43,12 @@ public class ConstantsFragment extends Fragment implements
         View view = inflater.inflate(R.layout.fragment_constants, container,
                 false);
         listView = (ListView) view.findViewById(R.id.list);
-        listView.setOnLongClickListener(new OnLongClickListener() {
-
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onLongClick(View v) {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                //TODO
 
-                return false;
+                return true;
             }
         });
 
@@ -125,17 +124,11 @@ public class ConstantsFragment extends Fragment implements
         @SuppressWarnings("deprecation")
         @Override
         public void onPostExecute(Void arg0) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                cursorAdapter = new SimpleCursorAdapter(getActivity(),
-                        R.layout.row, constantsCursor, new String[]{
-                        DatabaseHelper.TITLE, DatabaseHelper.VALUE},
-                        new int[]{R.id.title, R.id.value}, 0);
-            } else {
-                cursorAdapter = new SimpleCursorAdapter(getActivity(),
-                        R.layout.row, constantsCursor, new String[]{
-                        DatabaseHelper.TITLE, DatabaseHelper.VALUE},
-                        new int[]{R.id.title, R.id.value});
-            }
+            cursorAdapter = new SimpleCursorAdapter(getActivity(),
+                    R.layout.row, constantsCursor, new String[]{
+                    DatabaseHelper.TITLE, DatabaseHelper.VALUE},
+                    new int[]{R.id.title, R.id.value}, 0);
+
 
             listView.setAdapter(cursorAdapter);
 
@@ -162,4 +155,5 @@ public class ConstantsFragment extends Fragment implements
 
         }
     }
+
 }
